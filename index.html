@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nathan Tidball</title>
+  <title>Nathan Tidball | Energy Storage Engineer</title>
+  <meta name="description" content="Nathan Tidball’s personal website: utility-scale battery energy storage, engineering, Linux, and automation. Connect on LinkedIn or GitHub." />
+  <link rel="canonical" href="https://nathantidball.com/" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nathan Tidball | Energy Storage Engineer" />
+  <meta property="og:description" content="Battery energy storage, engineering, Linux, and automation." />
+  <meta property="og:url" content="https://nathantidball.com/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <style>
     :root {
       --bg: #0a0a0a;
@@ -11,13 +20,20 @@
       --border: #1e1e1e;
       --accent: #e31937;
       --text: #f0f0f0;
-      --muted: #888;
+      --muted: #aaa;
       --font: 'Inter', system-ui, -apple-system, sans-serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    :focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+    .skip-link { position: fixed; top: -5rem; left: 1rem; z-index: 200; background: #fff; color: #000; padding: 0.75rem; }
+    .skip-link:focus { top: 1rem; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
 
     body {
       background: var(--bg);
@@ -268,7 +284,7 @@
     /* SKILLS */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
       gap: 1.25rem;
     }
 
@@ -353,9 +369,10 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- NAV -->
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="#hero" class="logo">NT</a>
     <ul>
       <li><a href="#about">About</a></li>
@@ -365,6 +382,7 @@
     </ul>
   </nav>
 
+  <main id="main">
   <!-- HERO -->
   <div id="hero">
     <div class="hero-content">
@@ -375,7 +393,7 @@
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        <a href="https://linkedin.com/in/nathantidball" target="_blank" class="btn btn-outline">LinkedIn →</a>
+        <a href="https://linkedin.com/in/nathantidball" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn →</a>
       </div>
     </div>
   </div>
@@ -383,7 +401,7 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="section-label">About</div>
-    <div class="section-title">Engineer. Builder. Energy nerd.</div>
+    <h2 class="section-title">Engineer. Builder. Energy nerd.</h2>
     <div class="about-grid">
       <div class="about-text">
         <p>
@@ -420,7 +438,7 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-label">Experience</div>
-    <div class="section-title">Where I've worked</div>
+    <h2 class="section-title">Where I've worked</h2>
     <div class="exp-list">
       <div class="exp-card">
         <div class="exp-logo">⚡</div>
@@ -439,7 +457,7 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-label">Skills</div>
-    <div class="section-title">What I work with</div>
+    <h2 class="section-title">What I work with</h2>
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-icon">🔋</div>
@@ -477,7 +495,7 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-label">Contact</div>
-    <div class="section-title">Let's connect</div>
+    <h2 class="section-title">Let's connect</h2>
     <div class="contact-grid">
       <div class="contact-text">
         <p>
@@ -485,16 +503,17 @@
         </p>
       </div>
       <div class="contact-links">
-        <a href="https://linkedin.com/in/nathantidball" target="_blank" class="contact-link">
+        <a href="https://linkedin.com/in/nathantidball" target="_blank" rel="noopener noreferrer" class="contact-link">
           <span class="contact-link-icon">💼</span> linkedin.com/in/nathantidball
         </a>
-        <a href="https://github.com/nate13tidball" target="_blank" class="contact-link">
+        <a href="https://github.com/nate13tidball" target="_blank" rel="noopener noreferrer" class="contact-link">
           <span class="contact-link-icon">🐙</span> github.com/nate13tidball
         </a>
       </div>
     </div>
   </section>
 
+  </main>
   <footer>
     © 2026 Nathan Tidball · Built with intention ⚡
   </footer>
