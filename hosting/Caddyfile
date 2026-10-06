@@ -1,0 +1,17 @@
+augment-wh.com, www.augment-wh.com {
+	tls {
+		issuer acme
+	}
+	root * /srv/www/augment-wh.com
+	encode gzip
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		Content-Security-Policy "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+	}
+	file_server
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}
