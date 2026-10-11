@@ -9,6 +9,14 @@ files belong here; never commit credentials or private records.
 Run `python3 -m http.server 8000 --bind 127.0.0.1`, then open
 http://127.0.0.1:8000. This is a local preview, not a production server.
 
+## Meeting link
+
+Share `https://nathantidball.com/meet`. GitHub Pages serves `meet/index.html`
+(with a trailing-slash redirect), which immediately forwards visitors to Nathan's
+Google Calendar booking page without JavaScript. A direct fallback link is
+included. Both websites' meeting buttons use this short URL; update the Google
+Calendar URLs in `meet/index.html` if the booking destination changes.
+
 ## Finish domain setup
 
 1. Confirm ownership of nathantidball.com. Enable MFA and renewal on the registrar account.
