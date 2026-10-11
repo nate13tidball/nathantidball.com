@@ -14,7 +14,9 @@ http://127.0.0.1:8000. This is a local preview, not a production server.
 Share `https://nathantidball.com/meet`. GitHub Pages serves `meet/index.html`
 (with a trailing-slash redirect), which immediately forwards visitors to Nathan's
 Google Calendar booking page without JavaScript. A direct fallback link is
-included. Both websites' meeting buttons use this short URL; update the Google
+included. The personal site's meeting button uses a relative link so it also
+works on localhost and the GitHub Pages preview. Augment links to the custom
+domain, which must be connected before that button works. Update the Google
 Calendar URLs in `meet/index.html` if the booking destination changes.
 
 ## Finish domain setup
