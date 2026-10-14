@@ -1,0 +1,65 @@
+{
+  "source": "https://www.ourosmaterials.com/",
+  "inspected_on": "2026-10-11",
+  "sitemap": "https://www.ourosmaterials.com/sitemap.xml",
+  "pages_inspected": [
+    "https://www.ourosmaterials.com/",
+    "https://www.ourosmaterials.com/press",
+    "https://www.ourosmaterials.com/contact"
+  ],
+  "other_sitemap_routes": [
+    "/404"
+  ],
+  "method": [
+    "Public HTML and sitemap retrieval",
+    "Rendered Chromium inspection",
+    "Computed desktop styles",
+    "Desktop and mobile viewport screenshots"
+  ],
+  "viewports": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "measured_tokens": {
+    "colors": {
+      "ink": "#0a0a0a",
+      "dark_surface": "#121212",
+      "surface": "#ebebeb",
+      "muted": "#757575",
+      "background": "#ffffff"
+    },
+    "font_families": [
+      "Inter",
+      "Neue Haas Grotesk Display Pro 55 Roman"
+    ],
+    "desktop_font_sizes_px": {
+      "home_title": 105.887,
+      "section_heading": 54,
+      "product_heading": 64,
+      "secondary_page_title": 200,
+      "process_heading": 24
+    }
+  },
+  "template_adaptations": [
+    "System font stack",
+    "Original placeholder copy and CSS media",
+    "Static partner row",
+    "Native HTML menu and FAQ disclosures",
+    "Disabled contact form",
+    "No newsletter service"
+  ],
+  "coverage_limits": [
+    "Screenshots capture first viewports, not entire pages",
+    "No external news articles crawled",
+    "No form submissions or third-party service verification",
+    "No animation timing or pixel-perfect equivalence claimed"
+  ],
+  "source_assets_bundled_as_template_assets": false,
+  "runtime_dependencies": []
+}

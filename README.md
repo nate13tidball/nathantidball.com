@@ -9,6 +9,11 @@ files belong here; never commit credentials or private records.
 Run `python3 -m http.server 8000 --bind 127.0.0.1`, then open
 http://127.0.0.1:8000. This is a local preview, not a production server.
 
+## Design references
+
+[Web page templates](web-templates/README.md) contains reusable site references
+and standalone previews, starting with Ouros Materials.
+
 ## Meeting link
 
 Share `https://nathantidball.com/meet`. GitHub Pages serves `meet/index.html`
