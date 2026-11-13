@@ -64,6 +64,7 @@
     .hero-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(290px, .75fr); align-items: center; gap: clamp(1.5rem, 5vw, 4rem); }
     .hero-content { min-width: 0; }
     .eyebrow, .section-kicker { margin: 0 0 .9rem; color: var(--blue); font-size: .72rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    .hero-eyebrow { position: relative; z-index: 1; margin-bottom: 1.4rem; text-align: center; }
     h1 { margin: 0; color: var(--blue-dark); font-size: clamp(3.3rem, 7vw, 6.3rem); font-weight: 800; letter-spacing: -.075em; line-height: .94; }
     .hero-line { display: block; color: var(--ink); font-size: clamp(1.1rem, 2.3vw, 1.45rem); font-weight: 600; letter-spacing: -.025em; line-height: 1.35; margin-top: 1.25rem; }
     .hero-copy { max-width: 560px; margin: .75rem 0 0; color: var(--muted); font-size: clamp(1rem, 1.7vw, 1.08rem); }
@@ -182,24 +183,26 @@
   </header>
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap hero-layout">
-        <div class="hero-content">
-          <p class="eyebrow">Engineering · Research · Energy</p>
-          <h1 id="hero-title">Nathan<br>Tidball<span aria-hidden="true">.</span></h1>
-          <p class="hero-line">Building practical technology from materials to energy systems.</p>
-          <p class="hero-copy">Engineering at the intersection of electrochemistry, advanced materials, manufacturing, and resilient energy.</p>
-          <div class="actions">
-            <a class="button" href="#projects">Explore projects <span aria-hidden="true">↘</span></a>
-            <a class="button secondary" href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      <div class="wrap">
+        <p class="eyebrow hero-eyebrow">Engineering · Research · Energy</p>
+        <div class="hero-layout">
+          <div class="hero-content">
+            <h1 id="hero-title">Nathan<br>Tidball<span aria-hidden="true">.</span></h1>
+            <p class="hero-line">Building practical technology from materials to energy systems.</p>
+            <p class="hero-copy">Engineering at the intersection of electrochemistry, advanced materials, manufacturing, and resilient energy.</p>
+            <div class="actions">
+              <a class="button" href="#projects">Explore projects <span aria-hidden="true">↘</span></a>
+              <a class="button secondary" href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
+          <aside class="hero-feature" aria-label="Current engineering focus">
+            <p class="hero-feature-kicker">Current focus</p>
+            <div class="hero-feature-graphic" aria-hidden="true"><svg viewBox="0 0 320 135" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 102h68V71h62V87h60V32h114" stroke="#8FB7EF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 120h93V101h74V57h72v20h65" stroke="#557FBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="76" cy="71" r="8" fill="#DCEAFF" stroke="#8FB7EF" stroke-width="4"/><circle cx="138" cy="87" r="8" fill="#DCEAFF" stroke="#8FB7EF" stroke-width="4"/><circle cx="198" cy="32" r="8" fill="#DCEAFF" stroke="#8FB7EF" stroke-width="4"/><circle cx="247" cy="77" r="6" fill="#8FB7EF"/><rect x="216" y="16" width="72" height="34" rx="6" fill="#F4F8FF" fill-opacity=".12" stroke="#C7D9F6" stroke-width="2"/><path d="M228 33h9l6-9 9 17 6-8h18" stroke="#DCEAFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <p class="hero-feature-title">Energy systems at scale.</p>
+            <p class="hero-feature-role">Senior Product Engineer · Tesla Megapack</p>
+            <div class="hero-feature-path"><span>Materials</span><span>Manufacturing</span><span>Deployment</span></div>
+          </aside>
         </div>
-        <aside class="hero-feature" aria-label="Current engineering focus">
-          <p class="hero-feature-kicker">Current focus</p>
-          <div class="hero-feature-graphic" aria-hidden="true"><svg viewBox="0 0 320 135" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 102h68V71h62V87h60V32h114" stroke="#8FB7EF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 120h93V101h74V57h72v20h65" stroke="#557FBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="76" cy="71" r="8" fill="#DCEAFF" stroke="#8FB7EF" stroke-width="4"/><circle cx="138" cy="87" r="8" fill="#DCEAFF" stroke="#8FB7EF" stroke-width="4"/><circle cx="198" cy="32" r="8" fill="#DCEAFF" stroke="#8FB7EF" stroke-width="4"/><circle cx="247" cy="77" r="6" fill="#8FB7EF"/><rect x="216" y="16" width="72" height="34" rx="6" fill="#F4F8FF" fill-opacity=".12" stroke="#C7D9F6" stroke-width="2"/><path d="M228 33h9l6-9 9 17 6-8h18" stroke="#DCEAFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <p class="hero-feature-title">Energy systems at scale.</p>
-          <p class="hero-feature-role">Senior Product Engineer · Tesla Megapack</p>
-          <div class="hero-feature-path"><span>Materials</span><span>Manufacturing</span><span>Deployment</span></div>
-        </aside>
       </div>
     </section>
     <section id="about" aria-labelledby="about-title">
