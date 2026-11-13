@@ -96,7 +96,7 @@
     .project-visual { height: 168px; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 70% 15%, rgba(255,255,255,.55), transparent 35%), linear-gradient(135deg, #dce6f4, #b8c9e0 54%, #e8edf4); color: var(--blue); }
     .project-visual svg { width: 100%; height: 100%; }
     .project-meta { display: flex; justify-content: space-between; gap: .8rem; align-items: center; margin-bottom: 1rem; color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    .project-meta span:first-child { padding: .22rem .55rem; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font-size: .62rem; letter-spacing: .07em; }
+    .project-meta span:first-child { padding: .32rem .7rem; border: 1.5px solid #a8bddd; border-radius: 99px; background: #f0f5fc; color: var(--blue-dark); font-size: .78rem; font-weight: 850; letter-spacing: .04em; }
     .project h3 { margin: 0 0 .55rem; color: var(--blue-dark); font-size: 1.2rem; letter-spacing: -.025em; line-height: 1.25; }
     .project p { margin: 0; color: var(--muted); font-size: .92rem; }
     .project-source { display: flex; width: fit-content; margin-top: .65rem; color: var(--blue); font-size: .78rem; font-weight: 800; text-decoration: none; }
@@ -105,7 +105,6 @@
     .project-partner img { display: block; width: 100px; max-height: 26px; object-fit: contain; }
     .project-partner span { color: var(--muted); font-size: .72rem; font-weight: 700; }
     .project-partner--darpa img { max-height: 48px; }
-    .project-partner small { display: block; font-size: .64rem; font-weight: 500; }
     .timeline { border-left: 1px solid #aabbd3; margin-left: .45rem; }
     .timeline-item { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem; padding: 0 0 2rem 1.7rem; }
     .timeline-item:last-child { padding-bottom: 0; }
@@ -123,6 +122,8 @@
     .footer-links { display: flex; gap: 1.25rem; }
     .footer-links a { color: var(--blue); text-decoration: none; font-weight: 700; }
     .footer-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .asset-credit { width: 100%; font-size: .68rem; }
+    .asset-credit a { color: inherit; }
     @media (max-width: 720px) {
       .wrap { width: min(var(--max), calc(100% - 2rem)); }
       .nav-top { min-height: 62px; gap: .5rem; }
@@ -212,7 +213,7 @@
           </article>
           <article class="project">
             <a class="project-art-link" href="https://www.darpa.mil/news/2026/nom4d-program-demonstrates-automated-in-space-assembly" target="_blank" rel="noopener noreferrer" aria-label="Open DARPA's NOM4D update in a new tab"><img class="project-art" src="https://www.darpa.mil/sites/default/files/gallery/2026-11/program-darpa-nom4d-top-high-res.jpeg" alt="DARPA NOM4D illustration of in-orbit construction; original artwork by Colie Wertz" width="2880" height="1620" loading="lazy" decoding="sync" referrerpolicy="no-referrer"></a>
-            <div class="project-content"><div class="project-meta"><span>HRL Laboratories</span><span>’23</span></div><h3>DARPA NOM4D</h3><p>Contributed to HRL’s space-based manufacturing work, developing efficient ways to form and join structures for in-orbit construction.</p><a class="project-source" href="https://www.hrl.com/news/2023/01/11/hrl-laboratories-selected-for-nom4d-project-to-develop-space-based-construction-technologies" target="_blank" rel="noopener noreferrer">Read HRL’s NOM4D article ↗</a><a class="project-source" href="https://www.darpa.mil/news/2026/nom4d-program-demonstrates-automated-in-space-assembly" target="_blank" rel="noopener noreferrer">See DARPA’s update · art by Colie Wertz ↗</a><div class="project-partner project-partner--darpa"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Darpa-logo-2026.png" alt="DARPA logo" width="100" height="57" loading="lazy" decoding="async"><span>NOM4D program<small>Logo: <a href="https://commons.wikimedia.org/wiki/File:Darpa-logo-2026.png" target="_blank" rel="noopener noreferrer">DARPA-PAO</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></small></span></div></div>
+            <div class="project-content"><div class="project-meta"><span>HRL Laboratories</span><span>’23</span></div><h3>DARPA NOM4D</h3><p>Contributed to HRL’s space-based manufacturing work, developing efficient ways to form and join structures for in-orbit construction.</p><a class="project-source" href="https://www.hrl.com/news/2023/01/11/hrl-laboratories-selected-for-nom4d-project-to-develop-space-based-construction-technologies" target="_blank" rel="noopener noreferrer">Read HRL’s NOM4D article ↗</a><a class="project-source" href="https://www.darpa.mil/news/2026/nom4d-program-demonstrates-automated-in-space-assembly" target="_blank" rel="noopener noreferrer">See DARPA’s update · art by Colie Wertz ↗</a><div class="project-partner project-partner--darpa"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Darpa-logo-2026.png" alt="DARPA logo" width="100" height="57" loading="lazy" decoding="async"></div></div>
           </article>
           <article class="project">
             <a class="project-art-link" href="https://www.hrl.com/laboratories/mml" target="_blank" rel="noopener noreferrer" aria-label="Open HRL's Materials and Microsystems overview in a new tab"><img class="project-art" src="https://www.hrl.com/laboratories/mml/_images/_banner/main.jpg" alt="HRL Materials and Microsystems laboratory banner" width="1200" height="420" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
@@ -254,8 +255,8 @@
         <div class="timeline">
           <article class="timeline-item"><div><h3>Tesla</h3><p class="role">Senior Product Engineer · Megapack</p><p>Utility-scale battery energy storage, product engineering, and technical work supporting large battery deployments.</p></div><span class="timeline-date">Current</span></article>
           <article class="timeline-item"><div><h3>HRL Laboratories</h3><p class="role">Materials &amp; manufacturing research</p><p>Contributed to the DARPA NOMAD space manufacturing effort, multi-metal powder bed fusion, and high-entropy alloy development.</p></div><span class="timeline-date">’22–’23</span></article>
-          <article class="timeline-item"><div><h3>University of Michigan</h3><p class="role">B.S. Chemical Engineering · Research</p><p>Conducted research in redox flow batteries with David Kwabie and 3D-printed microfluidics in the Burns Lab.</p></div><span class="timeline-date">’19–’23</span></article>
           <article class="timeline-item"><div><h3>3D Systems</h3><p class="role">Materials Development Engineer · Research</p><p>Developed multi-jet printing resins, studied material degradation, and adapted printing for calcium-composite bone scaffolds.</p></div><span class="timeline-date">’21</span></article>
+          <article class="timeline-item"><div><h3>University of Michigan</h3><p class="role">B.S. Chemical Engineering · Research</p><p>Conducted research in redox flow batteries with David Kwabie and 3D-printed microfluidics in the Burns Lab.</p></div><span class="timeline-date">’19–’23</span></article>
           <article class="timeline-item"><div><h3>Early research</h3><p class="role">Award-winning researcher · chemistry &amp; microbial systems</p><p>Developed antimicrobial acrylate polymers and microbial fuel cells for arsenic filtration and heavy-metal removal, earning international ISEF awards.</p></div><span class="timeline-date">’17–’19</span></article>
         </div>
       </div>
@@ -267,6 +268,6 @@
       </div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><span>© 2026 Nathan Tidball</span><div class="footer-links"><a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a><a href="/meet" target="_blank" rel="noopener noreferrer">Schedule ↗</a><a href="https://x.com/NTidball73232" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://github.com/nate13tidball" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
+  <footer><div class="wrap footer-inner"><span>© 2026 Nathan Tidball</span><div class="footer-links"><a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a><a href="/meet" target="_blank" rel="noopener noreferrer">Schedule ↗</a><a href="https://x.com/NTidball73232" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://github.com/nate13tidball" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><span class="asset-credit">DARPA logo: <a href="https://commons.wikimedia.org/wiki/File:Darpa-logo-2026.png" target="_blank" rel="noopener noreferrer">DARPA-PAO</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></span></div></footer>
 </body>
 </html>
