@@ -69,11 +69,8 @@
     .nav-links { min-height: 46px; display: flex; gap: clamp(.8rem, 2.4vw, 2rem); align-items: center; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
     .nav-links a { text-decoration: none; color: var(--muted); font-size: .75rem; font-weight: 750; letter-spacing: .09em; }
     .nav-links a:hover { color: var(--blue); }
-    .header-actions { display: flex; align-items: center; gap: .45rem; }
-    .header-actions a { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: .45rem .7rem; border: 1px solid var(--line); border-radius: 4px; color: var(--blue); text-decoration: none; font-size: .75rem; font-weight: 800; white-space: nowrap; }
-    .header-actions a:hover { border-color: var(--blue); background: var(--soft-blue); }
-    .header-actions a:last-child { border-color: var(--blue); background: var(--blue); color: #fff; }
-    .header-actions a:last-child:hover { background: var(--blue-dark); }
+    .header-contact { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: .45rem .9rem; border: 1px solid var(--blue); border-radius: 4px; background: var(--blue); color: #fff; text-decoration: none; font-size: .75rem; font-weight: 800; white-space: nowrap; }
+    .header-contact:hover { background: var(--blue-dark); }
     .hero { position: relative; overflow: hidden; padding: clamp(2.8rem, 5vw, 4.5rem) 0; background: linear-gradient(120deg, #f5f8fc 0%, #fff 57%, #edf2f9 100%); border-bottom: 1px solid var(--line); }
     .hero::after { content: ""; position: absolute; width: 32rem; height: 32rem; top: -20rem; right: -8rem; border: 1px solid #dce5f1; border-radius: 50%; box-shadow: 0 0 0 3.5rem rgba(23,63,138,.025), 0 0 0 7rem rgba(23,63,138,.02); pointer-events: none; }
     .hero-layout { position: relative; z-index: 1; }
@@ -144,8 +141,7 @@
       .wrap { width: min(var(--max), calc(100% - 2rem)); }
       .nav-top { min-height: 62px; gap: .5rem; }
       .brand { font-size: .96rem; }
-      .header-actions { gap: .3rem; }
-      .header-actions a { min-height: 34px; padding: .35rem .5rem; font-size: .65rem; }
+      .header-contact { min-height: 34px; padding: .35rem .7rem; font-size: .65rem; }
       .nav-links { width: 100%; min-height: 42px; justify-content: space-between; gap: .3rem; }
       .nav-links a { font-size: .64rem; letter-spacing: .045em; }
       .section-head, .about-grid { grid-template-columns: 1fr; gap: 1rem; }
@@ -159,8 +155,7 @@
     }
     @media (max-width: 390px) {
       .nav-top { align-items: flex-start; flex-direction: column; }
-      .header-actions { width: 100%; }
-      .header-actions a { flex: 1; }
+      .header-contact { width: 100%; }
       .focus-panel ul { grid-template-columns: 1fr; }
       .focus-panel li { min-height: 68px; }
     }
@@ -173,11 +168,7 @@
     <nav class="nav wrap" aria-label="Main navigation">
       <div class="nav-top">
         <a class="brand" href="#top">NATHAN TIDBALL</a>
-        <div class="header-actions" aria-label="Quick contact links">
-          <a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a>
-          <a href="/meet" target="_blank" rel="noopener noreferrer">Schedule ↗</a>
-        </div>
+        <a class="header-contact" href="#contact">Contact ↘</a>
       </div>
       <ul class="nav-links">
         <li><a href="#about">ABOUT</a></li>
