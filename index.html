@@ -98,12 +98,12 @@
     .focus-panel li { display: flex; min-height: 84px; align-items: center; justify-content: center; padding: 1rem; border: 2px solid #9bb7dd; border-left: 4px solid var(--blue); border-radius: 11px; background: linear-gradient(145deg, #fff 25%, #eaf1fb); color: #263d62; font-size: 1rem; font-weight: 800; line-height: 1.35; text-align: center; box-shadow: 0 7px 0 rgba(23,63,138,.09), 0 14px 24px rgba(29,58,100,.13), inset 0 1px #fff; }
     .focus-panel li::before { content: none; }
     .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .project { min-height: 230px; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: linear-gradient(145deg, #fff, #f8fafd); transition: border-color .18s, transform .18s, box-shadow .18s; }
+    .project { display: flex; flex-direction: column; min-height: 230px; overflow: hidden; border: 2px solid #c4d3e7; border-radius: 6px; background: linear-gradient(145deg, #fff, #f8fafd); transition: border-color .18s, transform .18s, box-shadow .18s; }
     .project:hover { transform: translateY(-3px); border-color: #9bb3d8; box-shadow: 0 12px 28px rgba(29,58,100,.08); }
     .project-art-link { display: block; height: 168px; overflow: hidden; background: linear-gradient(135deg, #eaf0fa, #c8d6eb); }
     .project-art { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
     .project-art-link:hover .project-art { transform: scale(1.025); }
-    .project-content { padding: clamp(1.2rem, 3vw, 1.7rem); }
+    .project-content { display: flex; flex: 1; flex-direction: column; padding: clamp(1.2rem, 3vw, 1.7rem); }
     .project-visual { height: 168px; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 70% 15%, rgba(255,255,255,.55), transparent 35%), linear-gradient(135deg, #dce6f4, #b8c9e0 54%, #e8edf4); color: var(--blue); }
     .project-visual svg { width: 100%; height: 100%; }
     .project-meta { display: flex; justify-content: space-between; gap: .8rem; align-items: center; margin-bottom: 1rem; color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
@@ -112,10 +112,8 @@
     .project p { margin: 0; color: var(--muted); font-size: .92rem; }
     .project-source { display: flex; width: fit-content; margin-top: .65rem; color: var(--blue); font-size: .78rem; font-weight: 800; text-decoration: none; }
     .project-source:hover { color: var(--blue-dark); text-decoration: underline; text-underline-offset: 3px; }
-    .project-partner { display: flex; align-items: center; gap: .7rem; margin-top: 1rem; }
-    .project-partner img { display: block; width: 100px; max-height: 26px; object-fit: contain; }
-    .project-partner span { color: var(--muted); font-size: .72rem; font-weight: 700; }
-    .project-partner--darpa img { max-height: 48px; }
+    .project-partner { display: grid; place-items: center; min-height: 70px; margin-top: auto; padding-top: 1.2rem; }
+    .project-partner img { display: block; width: 160px; height: 50px; object-fit: contain; }
     .timeline { border-left: 1px solid #aabbd3; margin-left: .45rem; }
     .timeline-item { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem; padding: 0 0 2rem 1.7rem; }
     .timeline-item:last-child { padding-bottom: 0; }
@@ -133,8 +131,6 @@
     .footer-links { display: flex; gap: 1.25rem; }
     .footer-links a { color: var(--blue); text-decoration: none; font-weight: 700; }
     .footer-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
-    .asset-credit { width: 100%; font-size: .68rem; }
-    .asset-credit a { color: inherit; }
     @media (max-width: 720px) {
       .wrap { width: min(var(--max), calc(100% - 2rem)); }
       .hero-layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -232,15 +228,15 @@
         <div class="project-grid">
           <article class="project">
             <a class="project-art-link" href="https://x.com/Tesla_Megapack/status/2016567540315804049" target="_blank" rel="noopener noreferrer" aria-label="Open Tesla Megapack’s utility-scale storage post in a new tab"><img class="project-art" src="https://pbs.twimg.com/media/G_xI8kVbUAEmMmB.png?name=orig" alt="Aerial view of a large Tesla Megapack installation in Arizona" width="780" height="589" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
-            <div class="project-content"><div class="project-meta"><span>Tesla</span><span>’26</span></div><h3>Utility-scale energy storage &amp; fleet engineering</h3><p>Senior Product Engineer and Subject Matter Expert across Megapack fleet management, technical operations, and utility-scale energy storage systems.</p><a class="project-source" href="https://x.com/Tesla_Megapack/status/2016567540315804049" target="_blank" rel="noopener noreferrer">See a Tesla Megapack deployment ↗</a></div>
+            <div class="project-content"><div class="project-meta"><span>Tesla</span><span>’26</span></div><h3>Utility-scale energy storage &amp; fleet engineering</h3><p>Senior Product Engineer and Subject Matter Expert across Megapack fleet management, technical operations, and utility-scale energy storage systems.</p><a class="project-source" href="https://x.com/Tesla_Megapack/status/2016567540315804049" target="_blank" rel="noopener noreferrer">See a Tesla Megapack deployment ↗</a><div class="project-partner"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Tesla%2C_Inc._-_Logo_%28black_script_version%29.svg" alt="Tesla logo" width="160" height="16" loading="lazy" decoding="async"></div></div>
           </article>
           <article class="project">
             <a class="project-art-link" href="https://www.darpa.mil/news/2026/nom4d-program-demonstrates-automated-in-space-assembly" target="_blank" rel="noopener noreferrer" aria-label="Open DARPA's NOM4D update in a new tab"><img class="project-art" src="https://www.darpa.mil/sites/default/files/gallery/2026-11/program-darpa-nom4d-top-high-res.jpeg" alt="DARPA NOM4D illustration of in-orbit construction; original artwork by Colie Wertz" width="2880" height="1620" loading="lazy" decoding="sync" referrerpolicy="no-referrer"></a>
-            <div class="project-content"><div class="project-meta"><span>HRL Laboratories</span><span>’23</span></div><h3>DARPA NOM4D</h3><p>Developed methods to form and join structures for in-orbit construction through HRL’s DARPA NOM4D program.</p><a class="project-source" href="https://www.hrl.com/news/2023/01/11/hrl-laboratories-selected-for-nom4d-project-to-develop-space-based-construction-technologies" target="_blank" rel="noopener noreferrer">Read HRL’s NOM4D article ↗</a><a class="project-source" href="https://www.darpa.mil/news/2026/nom4d-program-demonstrates-automated-in-space-assembly" target="_blank" rel="noopener noreferrer">See DARPA’s update · art by Colie Wertz ↗</a><div class="project-partner project-partner--darpa"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Darpa-logo-2026.png" alt="DARPA logo" width="100" height="57" loading="lazy" decoding="async"></div></div>
+            <div class="project-content"><div class="project-meta"><span>HRL Laboratories</span><span>’23</span></div><h3>DARPA NOM4D</h3><p>Developed methods to form and join structures for in-orbit construction through HRL’s DARPA NOM4D program.</p><a class="project-source" href="https://www.hrl.com/news/2023/01/11/hrl-laboratories-selected-for-nom4d-project-to-develop-space-based-construction-technologies" target="_blank" rel="noopener noreferrer">Read HRL’s NOM4D article ↗</a><a class="project-source" href="https://www.darpa.mil/news/2026/nom4d-program-demonstrates-automated-in-space-assembly" target="_blank" rel="noopener noreferrer">See DARPA’s update · art by Colie Wertz ↗</a><div class="project-partner"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Darpa-logo-2026.png" alt="DARPA logo" width="160" height="50" loading="lazy" decoding="async"></div></div>
           </article>
           <article class="project">
             <a class="project-art-link" href="https://www.hrl.com/laboratories/mml" target="_blank" rel="noopener noreferrer" aria-label="Open HRL's Materials and Microsystems overview in a new tab"><img class="project-art" src="https://www.hrl.com/laboratories/mml/_images/_banner/main.jpg" alt="HRL Materials and Microsystems laboratory banner" width="1200" height="420" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
-            <div class="project-content"><div class="project-meta"><span>HRL Laboratories</span><span>’23</span></div><h3>Multi-metal additive manufacturing</h3><p>Developed multi-metal powder bed fusion processes and novel alloy systems, including work patented with Boeing.</p><a class="project-source" href="https://www.hrl.com/laboratories/mml" target="_blank" rel="noopener noreferrer">Explore HRL materials research ↗</a><div class="project-partner"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Boeing_full_logo.svg" alt="Boeing logo" width="100" height="24" loading="lazy" decoding="async"><span>Patent collaboration</span></div></div>
+            <div class="project-content"><div class="project-meta"><span>HRL Laboratories</span><span>’23</span></div><h3>Multi-metal additive manufacturing</h3><p>Developed multi-metal powder bed fusion processes and novel alloy systems, including work patented with Boeing.</p><a class="project-source" href="https://www.hrl.com/laboratories/mml" target="_blank" rel="noopener noreferrer">Explore HRL materials research ↗</a><div class="project-partner"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Boeing_full_logo.svg" alt="Boeing logo" width="160" height="50" loading="lazy" decoding="async"></div></div>
           </article>
           <article class="project">
             <div class="project-visual" role="img" aria-label="Illustration of additive manufacturing printing a microfluidic channel device"><svg viewBox="0 0 640 240" aria-hidden="true"><g fill="none" stroke="#173f8a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M170 34v32h300V34M205 34v26M435 34v26M320 66v42"/><path d="M292 102h56l-12 20h-32z" fill="#8faedc"/><path d="M185 145h270v52H185z" fill="#f8fbff" stroke-width="4"/><path d="M204 160h52c18 0 18 22 36 22h50c18 0 18-22 36-22h57" stroke="#557fb9" stroke-width="8"/><path d="M320 122v18M190 209h260" stroke-opacity=".45"/></g><path d="M286 127h68M294 135h52M302 143h36" stroke="#95b0d5" stroke-width="4" stroke-linecap="round"/><circle cx="320" cy="99" r="7" fill="#173f8a"/></svg></div>
@@ -293,6 +289,6 @@
       </div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><span>© 2026 Nathan Tidball</span><div class="footer-links"><a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a><a href="/meet" target="_blank" rel="noopener noreferrer">Schedule ↗</a><a href="https://x.com/NTidball73232" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://github.com/nate13tidball" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><span class="asset-credit">DARPA logo: <a href="https://commons.wikimedia.org/wiki/File:Darpa-logo-2026.png" target="_blank" rel="noopener noreferrer">DARPA-PAO</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></span></div></footer>
+  <footer><div class="wrap footer-inner"><span>© 2026 Nathan Tidball</span><div class="footer-links"><a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a><a href="/meet" target="_blank" rel="noopener noreferrer">Schedule ↗</a><a href="https://x.com/NTidball73232" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://github.com/nate13tidball" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
 </body>
 </html>
