@@ -76,14 +76,16 @@
     .about-head { grid-template-columns: 1fr; }
     .section-head h2 { margin: 0; color: var(--blue-dark); font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.055em; line-height: 1.08; }
     .section-intro { max-width: 650px; margin: .25rem 0 0; color: var(--muted); }
-    .about-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: clamp(2rem, 7vw, 6rem); align-items: start; }
+    .about-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: clamp(2rem, 7vw, 6rem); align-items: stretch; }
+    .about-copy, .focus-panel { display: flex; flex-direction: column; }
+    .about-copy { justify-content: space-between; }
     .about-copy p { max-width: 680px; margin: 0 0 1rem; color: var(--muted); }
+    .about-copy p:last-child { margin-bottom: 0; }
     .about-copy strong { color: var(--ink); }
     .focus-panel h3 { margin: 0 0 .9rem; color: var(--blue-dark); font-size: .78rem; letter-spacing: .11em; text-transform: uppercase; }
-    .focus-panel ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; margin: 0; padding: 0; list-style: none; }
-    .focus-panel li { display: flex; min-height: 112px; align-items: center; justify-content: center; padding: 1rem; border: 1px solid #c5d2e3; border-radius: 9px; background: linear-gradient(145deg, #fff, #f4f7fb); color: #263d62; font-size: 1rem; font-weight: 800; line-height: 1.35; text-align: center; box-shadow: 0 5px 15px rgba(29,58,100,.08), inset 0 1px #fff; }
+    .focus-panel ul { display: grid; flex: 1; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: .7rem; margin: 0; padding: 0; list-style: none; }
+    .focus-panel li { display: flex; min-height: 84px; align-items: center; justify-content: center; padding: 1rem; border: 1px solid #c5d2e3; border-radius: 9px; background: linear-gradient(145deg, #fff, #f4f7fb); color: #263d62; font-size: 1rem; font-weight: 800; line-height: 1.35; text-align: center; box-shadow: 0 5px 15px rgba(29,58,100,.08), inset 0 1px #fff; }
     .focus-panel li::before { content: none; }
-    .focus-panel li:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - .35rem); }
     .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
     .project { min-height: 230px; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: linear-gradient(145deg, #fff, #f8fafd); transition: border-color .18s, transform .18s, box-shadow .18s; }
     .project:hover { transform: translateY(-3px); border-color: #9bb3d8; box-shadow: 0 12px 28px rgba(29,58,100,.08); }
@@ -141,7 +143,6 @@
       .header-actions a { flex: 1; }
       .focus-panel ul { grid-template-columns: 1fr; }
       .focus-panel li { min-height: 68px; }
-      .focus-panel li:last-child:nth-child(odd) { width: 100%; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
   </style>
@@ -191,7 +192,7 @@
           </div>
           <aside class="focus-panel" aria-label="Areas of focus">
             <h3>Areas of focus</h3>
-            <ul><li>Energy storage</li><li>Systems engineering</li><li>Advanced manufacturing</li><li>Materials development</li><li>Microfluidics &amp; lab prototyping</li></ul>
+            <ul><li>Energy storage</li><li>Systems engineering</li><li>Advanced manufacturing</li><li>Materials development</li></ul>
           </aside>
         </div>
       </div>
