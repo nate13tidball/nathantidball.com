@@ -7,7 +7,7 @@
   <meta name="description" content="Nathan Tidball is an engineer working across energy storage, advanced manufacturing, materials, and electrochemistry.">
   <link rel="canonical" href="https://nathantidball.com/">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data: https://www.hrl.com https://fairfolio.org; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Nathan Tidball — Engineer &amp; Researcher">
   <meta property="og:description" content="Energy storage, advanced manufacturing, materials, and electrochemistry.">
@@ -36,10 +36,16 @@
     .wrap { width: min(var(--max), calc(100% - 3rem)); margin-inline: auto; }
     .site-header { position: sticky; top: 0; z-index: 5; border-bottom: 1px solid rgba(214,223,234,.86); background: rgba(255,255,255,.94); backdrop-filter: blur(14px); }
     .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nav-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .brand { color: var(--blue); text-decoration: none; font-size: 1.08rem; font-weight: 800; letter-spacing: -.035em; white-space: nowrap; }
     .nav-links { display: flex; gap: clamp(.8rem, 2.4vw, 2rem); align-items: center; list-style: none; margin: 0; padding: 0; }
     .nav-links a { text-decoration: none; color: var(--muted); font-size: .75rem; font-weight: 750; letter-spacing: .09em; }
     .nav-links a:hover { color: var(--blue); }
+    .header-actions { display: flex; align-items: center; gap: .45rem; }
+    .header-actions a { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: .45rem .7rem; border: 1px solid var(--line); border-radius: 4px; color: var(--blue); text-decoration: none; font-size: .75rem; font-weight: 800; white-space: nowrap; }
+    .header-actions a:hover { border-color: var(--blue); background: var(--soft-blue); }
+    .header-actions a:last-child { border-color: var(--blue); background: var(--blue); color: #fff; }
+    .header-actions a:last-child:hover { background: var(--blue-dark); }
     .hero { position: relative; overflow: hidden; padding: clamp(5.5rem, 12vw, 9rem) 0 clamp(5rem, 10vw, 8rem); background: linear-gradient(120deg, #f5f8fc 0%, #fff 57%, #edf2f9 100%); border-bottom: 1px solid var(--line); }
     .hero::after { content: ""; position: absolute; width: 38rem; height: 38rem; top: -19rem; right: -7rem; border: 1px solid #dce5f1; border-radius: 50%; box-shadow: 0 0 0 3.5rem rgba(23,63,138,.025), 0 0 0 7rem rgba(23,63,138,.02); pointer-events: none; }
     .hero-content { position: relative; z-index: 1; max-width: 850px; }
@@ -65,12 +71,21 @@
     .focus-panel li { color: #3f5068; font-size: .92rem; }
     .focus-panel li::before { content: "—"; margin-right: .55rem; color: var(--blue); font-weight: 800; }
     .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .project { min-height: 230px; padding: clamp(1.35rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: 6px; background: linear-gradient(145deg, #fff, #f8fafd); transition: border-color .18s, transform .18s, box-shadow .18s; }
+    .project { min-height: 230px; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: linear-gradient(145deg, #fff, #f8fafd); transition: border-color .18s, transform .18s, box-shadow .18s; }
     .project:hover { transform: translateY(-3px); border-color: #9bb3d8; box-shadow: 0 12px 28px rgba(29,58,100,.08); }
+    .project-art-link { display: block; height: 168px; overflow: hidden; background: linear-gradient(135deg, #eaf0fa, #c8d6eb); }
+    .project-art { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+    .project-art-link:hover .project-art { transform: scale(1.025); }
+    .project-content { padding: clamp(1.2rem, 3vw, 1.7rem); }
+    .project-visual { height: 168px; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 70% 15%, rgba(255,255,255,.55), transparent 35%), linear-gradient(135deg, #dce6f4, #b8c9e0 54%, #e8edf4); color: var(--blue); }
+    .project-visual svg { width: 100%; height: 100%; }
     .project-meta { display: flex; justify-content: space-between; gap: .8rem; align-items: center; margin-bottom: 1rem; color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .project-meta span:last-child { padding: .22rem .55rem; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font-size: .62rem; letter-spacing: .07em; }
     .project h3 { margin: 0 0 .55rem; color: var(--blue-dark); font-size: 1.2rem; letter-spacing: -.025em; line-height: 1.25; }
     .project p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .project-source { display: inline-flex; margin-top: 1rem; color: var(--blue); font-size: .78rem; font-weight: 800; text-decoration: none; }
+    .project-source:hover { color: var(--blue-dark); text-decoration: underline; text-underline-offset: 3px; }
+    .project-credit { display: block; margin-top: .55rem; color: #7a8799; font-size: .65rem; }
     .timeline { border-left: 1px solid #aabbd3; margin-left: .45rem; }
     .timeline-item { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem; padding: 0 0 2rem 1.7rem; }
     .timeline-item:last-child { padding-bottom: 0; }
@@ -87,17 +102,28 @@
     .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
     .footer-links { display: flex; gap: 1.25rem; }
     .footer-links a { color: var(--blue); text-decoration: none; font-weight: 700; }
+    .footer-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
     @media (max-width: 720px) {
       .wrap { width: min(var(--max), calc(100% - 2rem)); }
-      .nav { min-height: 68px; align-items: flex-start; flex-direction: column; gap: .45rem; padding: .8rem 0 .7rem; }
+      .nav { min-height: 68px; align-items: stretch; flex-direction: column; gap: .55rem; padding: .7rem 0; }
+      .nav-top { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+      .brand { font-size: .96rem; }
+      .header-actions { gap: .3rem; }
+      .header-actions a { min-height: 34px; padding: .35rem .5rem; font-size: .65rem; }
       .nav-links { width: 100%; justify-content: space-between; gap: .3rem; }
       .nav-links a { font-size: .64rem; letter-spacing: .045em; }
       .section-head, .about-grid { grid-template-columns: 1fr; gap: 1rem; }
       .section-head { margin-bottom: 1.7rem; }
       .project-grid { grid-template-columns: 1fr; }
       .project { min-height: auto; }
+      .project-art-link, .project-visual { height: 150px; }
       .timeline-item { grid-template-columns: 1fr; gap: .2rem; }
       .timeline-date { grid-row: 1; }
+    }
+    @media (max-width: 390px) {
+      .nav-top { align-items: flex-start; flex-direction: column; }
+      .header-actions { width: 100%; }
+      .header-actions a { flex: 1; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
   </style>
@@ -106,7 +132,14 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#top">NATHAN TIDBALL</a>
+      <div class="nav-top">
+        <a class="brand" href="#top">NATHAN TIDBALL</a>
+        <div class="header-actions" aria-label="Quick contact links">
+          <a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a>
+          <a href="/meet" target="_blank" rel="noopener noreferrer">Schedule ↗</a>
+        </div>
+      </div>
       <ul class="nav-links">
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#projects">PROJECTS</a></li>
@@ -153,14 +186,38 @@
           <p class="section-intro">A selection of research and engineering work, from early experiments in environmental biotechnology to in-orbit manufacturing and grid-scale batteries.</p>
         </div>
         <div class="project-grid">
-          <article class="project"><div class="project-meta"><span>High school · Sophomore</span><span>Bioelectrochemistry</span></div><h3>Arsenic-resistant microbial fuel cell</h3><p>Explored exoelectrogenic biofilms in a microbial fuel cell as a route to treating arsenic-contaminated water.</p></article>
-          <article class="project"><div class="project-meta"><span>High school · Junior</span><span>Environmental engineering</span></div><h3>Microbial fuel cells for heavy-metal removal</h3><p>Genetically modified electricity-producing bacteria to tolerate heavy metals and promote their precipitation from water.</p></article>
-          <article class="project"><div class="project-meta"><span>High school · Senior</span><span>Polymer science</span></div><h3>Antimicrobial acrylate polymers</h3><p>Developed novel acrylate molecules and polymerized them into antimicrobial materials, recognized at the Intel International Science and Engineering Fair.</p></article>
-          <article class="project"><div class="project-meta"><span>University of Michigan</span><span>Electrochemistry</span></div><h3>Redox flow battery systems</h3><p>In David Kwabie’s lab, designed experimental setups and explored new electrolytes for redox flow batteries.</p></article>
-          <article class="project"><div class="project-meta"><span>University of Michigan</span><span>Microfluidics</span></div><h3>3D-printed microfluidic channels</h3><p>Worked in the Burns Lab on using 3D printing to create microfluidic channels and research devices.</p></article>
-          <article class="project"><div class="project-meta"><span>HRL Laboratories</span><span>Space manufacturing</span></div><h3>DARPA NOMAD</h3><p>Contributed to research in space-based manufacturing and the possibilities of producing materials in orbit.</p></article>
-          <article class="project"><div class="project-meta"><span>HRL Laboratories</span><span>Powder bed fusion</span></div><h3>Multi-metal additive manufacturing</h3><p>Worked on multi-metal powder bed fusion with novel alloys, including work associated with a Boeing patent.</p></article>
-          <article class="project"><div class="project-meta"><span>HRL Laboratories</span><span>Alloy development</span></div><h3>High-entropy alloys</h3><p>Supported development of high-entropy alloys and new material systems for demanding manufacturing applications.</p></article>
+          <article class="project">
+            <a class="project-art-link" href="https://www.hrl.com/news/2023/01/11/hrl-laboratories-selected-for-nom4d-project-to-develop-space-based-construction-technologies" target="_blank" rel="noopener noreferrer" aria-label="Open HRL's NOM4D article in a new tab"><img class="project-art" src="https://www.hrl.com/wp-content/uploads/2023/02/DARPA-NOM4D_72.png" alt="HRL concept illustration of an orbital power station" width="684" height="295" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
+            <div class="project-content"><div class="project-meta"><span>2023 · HRL Laboratories</span><span>Space manufacturing</span></div><h3>DARPA NOM4D</h3><p>Contributed to HRL’s space-based manufacturing work, developing efficient ways to form and join structures for in-orbit construction.</p><a class="project-source" href="https://www.hrl.com/news/2023/01/11/hrl-laboratories-selected-for-nom4d-project-to-develop-space-based-construction-technologies" target="_blank" rel="noopener noreferrer">Read HRL’s NOM4D article ↗</a><small class="project-credit">Concept art: HRL Laboratories</small></div>
+          </article>
+          <article class="project">
+            <a class="project-art-link" href="https://www.hrl.com/laboratories/mml" target="_blank" rel="noopener noreferrer" aria-label="Open HRL's Materials and Microsystems overview in a new tab"><img class="project-art" src="https://www.hrl.com/laboratories/mml/_images/_banner/main.jpg" alt="HRL Materials and Microsystems laboratory banner" width="1200" height="420" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
+            <div class="project-content"><div class="project-meta"><span>HRL Laboratories</span><span>Powder bed fusion</span></div><h3>Multi-metal additive manufacturing</h3><p>Worked on powder bed fusion printing across multiple metals, including novel alloy systems and work associated with a Boeing patent.</p><a class="project-source" href="https://www.hrl.com/laboratories/mml" target="_blank" rel="noopener noreferrer">Explore HRL materials research ↗</a></div>
+          </article>
+          <article class="project">
+            <div class="project-visual" role="img" aria-label="Illustration of an alloy crystal lattice"><svg viewBox="0 0 640 240" aria-hidden="true"><g fill="none" stroke="#173f8a" stroke-opacity=".45" stroke-width="3"><path d="M150 66 254 34l108 42 118-24M150 66l-8 100 112 42 108-48 118 34M254 34l0 88 108 38 0-86M142 166l112-44 108 48 126-34M362 76l110 100"/><path d="m254 122 118-46 100 110" stroke-opacity=".25"/></g><g fill="#173f8a"><circle cx="150" cy="66" r="12"/><circle cx="254" cy="34" r="12"/><circle cx="362" cy="76" r="12"/><circle cx="480" cy="52" r="12"/><circle cx="142" cy="166" r="12"/><circle cx="254" cy="122" r="12"/><circle cx="362" cy="160" r="12"/><circle cx="488" cy="132" r="12"/><circle cx="254" cy="208" r="12"/></g><g fill="#fff" opacity=".9"><circle cx="146" cy="62" r="3"/><circle cx="250" cy="30" r="3"/><circle cx="358" cy="72" r="3"/><circle cx="476" cy="48" r="3"/><circle cx="138" cy="162" r="3"/><circle cx="250" cy="118" r="3"/><circle cx="358" cy="156" r="3"/><circle cx="484" cy="128" r="3"/></g></svg></div>
+            <div class="project-content"><div class="project-meta"><span>HRL Laboratories</span><span>Materials science</span></div><h3>High-entropy alloy development</h3><p>Supported development of high-entropy alloys and novel material systems for advanced manufacturing applications.</p></div>
+          </article>
+          <article class="project">
+            <div class="project-visual" role="img" aria-label="Illustration of a redox flow battery with two electrolyte reservoirs"><svg viewBox="0 0 640 240" aria-hidden="true"><g fill="none" stroke="#173f8a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M160 58v74c0 18 12 30 30 30h32M480 58v74c0 18-12 30-30 30h-32M222 162h24M394 162h24M280 60v122h80V60M300 60V42h40v18"/><path d="M222 162v31h-40M418 162v31h40" stroke-opacity=".45"/></g><path d="M166 105h38v51h-38zM436 92h38v64h-38z" fill="#8faedc"/><path d="M166 105h38v51h-38z" fill="#8faedc"/><path d="M282 128h76" stroke="#9aaec9" stroke-width="3" stroke-dasharray="8 8"/><circle cx="320" cy="128" r="13" fill="#173f8a"/><path d="m312 128 6 6 12-14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="project-content"><div class="project-meta"><span>University of Michigan · 2019–2023</span><span>Electrochemistry</span></div><h3>Redox flow battery systems</h3><p>In David Kwabie’s lab, designed experimental setups and explored new electrolytes for redox flow batteries.</p></div>
+          </article>
+          <article class="project">
+            <div class="project-visual" role="img" aria-label="Illustration of channels in a microfluidic device"><svg viewBox="0 0 640 240" aria-hidden="true"><rect x="124" y="34" width="392" height="172" rx="14" fill="#f8fbff" stroke="#173f8a" stroke-width="4"/><path d="M150 82h100c34 0 34 74 70 74h60c34 0 34-74 70-74h40M150 158h54c28 0 28-38 56-38h80c30 0 30 38 58 38h92" fill="none" stroke="#557fb9" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><circle cx="150" cy="82" r="10" fill="#173f8a"/><circle cx="490" cy="82" r="10" fill="#173f8a"/><circle cx="150" cy="158" r="10" fill="#95b0d5"/><circle cx="490" cy="158" r="10" fill="#95b0d5"/><path d="M178 82h44m58 76h26m80-76h30m30 76h44" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></div>
+            <div class="project-content"><div class="project-meta"><span>University of Michigan · 2019–2023</span><span>Microfluidics</span></div><h3>3D-printed microfluidic channels</h3><p>Worked in the Burns Lab on using 3D printing to create microfluidic channels and research devices.</p></div>
+          </article>
+          <article class="project">
+            <a class="project-art-link" href="https://abstracts.societyforscience.org/Home/FullAbstract?ProjectId=17829" target="_blank" rel="noopener noreferrer" aria-label="Open the 2019 antimicrobial copolymers ISEF abstract in a new tab"><img class="project-art" src="https://fairfolio.org/og/acrylate-polymerization-formation-of-uv-curable-antimicrobia-270eafa4.png" alt="Fairfolio preview for Nathan Tidball’s antimicrobial copolymer project" width="1200" height="630" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
+            <div class="project-content"><div class="project-meta"><span>2019</span><span>Polymer science</span></div><h3>Antimicrobial acrylate polymers</h3><p>Developed novel acrylate molecules and polymerized them into antimicrobial materials, earning second place in ISEF Materials Science.</p><a class="project-source" href="https://abstracts.societyforscience.org/Home/FullAbstract?ProjectId=17829" target="_blank" rel="noopener noreferrer">Read official 2019 ISEF abstract ↗</a><small class="project-credit">Thumbnail: Fairfolio · project record: Society for Science</small></div>
+          </article>
+          <article class="project">
+            <a class="project-art-link" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=15579" target="_blank" rel="noopener noreferrer" aria-label="Open the 2018 heavy-metal precipitation ISEF abstract in a new tab"><img class="project-art" src="https://fairfolio.org/og/single-chamber-mfc-role-of-extracellular-phosphate-in-heavy-fe2a527b.png" alt="Fairfolio preview for Nathan Tidball’s heavy-metal precipitation microbial fuel cell project" width="1200" height="630" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
+            <div class="project-content"><div class="project-meta"><span>2018</span><span>Environmental engineering</span></div><h3>Microbial fuel cells for heavy-metal removal</h3><p>Engineered a microbial fuel cell around modified exoelectrogenic bacteria to precipitate heavy metals from water while producing electricity.</p><a class="project-source" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=15579" target="_blank" rel="noopener noreferrer">Read official 2018 ISEF abstract ↗</a><small class="project-credit">Thumbnail: Fairfolio · project record: Society for Science</small></div>
+          </article>
+          <article class="project">
+            <a class="project-art-link" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=9342" target="_blank" rel="noopener noreferrer" aria-label="Open the 2017 arsenic filtration ISEF abstract in a new tab"><img class="project-art" src="https://fairfolio.org/og/single-chamber-mfc-filtration-of-arsenic-with-an-exoelectrog-79d6f4b4.png" alt="Fairfolio preview for Nathan Tidball’s arsenic filtration microbial fuel cell project" width="1200" height="630" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
+            <div class="project-content"><div class="project-meta"><span>2017</span><span>Bioelectrochemistry</span></div><h3>Arsenic filtration microbial fuel cell</h3><p>Studied an exoelectrogenic biofilm in a microbial fuel cell as a way to filter arsenic-contaminated water while generating electricity.</p><a class="project-source" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=9342" target="_blank" rel="noopener noreferrer">Read official 2017 ISEF abstract ↗</a><small class="project-credit">Thumbnail: Fairfolio · project record: Society for Science</small></div>
+          </article>
         </div>
       </div>
     </section>
@@ -180,10 +237,10 @@
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-layout">
         <div><p class="section-kicker">04 / Connect</p><h2 id="contact-title">Let’s compare notes.</h2><p>Interested in energy storage, materials, manufacturing, or a thoughtful engineering collaboration? I’d be glad to hear from you.</p></div>
-        <div class="actions"><a class="button" href="mailto:nate.tidball@gmail.com">Email me</a><a class="button secondary" href="/meet">Schedule a conversation</a></div>
+        <div class="actions"><a class="button secondary" href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="button" href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email me ↗</a><a class="button secondary" href="/meet" target="_blank" rel="noopener noreferrer">Schedule a conversation ↗</a></div>
       </div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><span>© 2026 Nathan Tidball</span><div class="footer-links"><a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/nate13tidball" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
+  <footer><div class="wrap footer-inner"><span>© 2026 Nathan Tidball</span><div class="footer-links"><a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a><a href="/meet" target="_blank" rel="noopener noreferrer">Schedule ↗</a><a href="https://github.com/nate13tidball" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
 </body>
 </html>
