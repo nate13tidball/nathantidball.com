@@ -86,10 +86,12 @@
     .button.secondary { background: transparent; color: var(--blue); }
     .button.secondary:hover { background: var(--soft-blue); }
     main > section { padding: clamp(4.5rem, 9vw, 7rem) 0; border-bottom: 1px solid var(--line); }
-    .section-head { display: grid; grid-template-columns: minmax(180px, .7fr) 2fr; gap: 2rem; align-items: start; margin-bottom: 2.5rem; }
-    .about-head { grid-template-columns: 1fr; }
+    .section-head { display: grid; grid-template-columns: minmax(180px, .7fr) minmax(0, 2fr) auto; gap: 2rem; align-items: start; margin-bottom: 2.5rem; }
+    .about-head { grid-template-columns: 1fr auto; }
     .section-head h2 { margin: 0; color: var(--blue-dark); font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.055em; line-height: 1.08; }
     .section-intro { max-width: 650px; margin: .25rem 0 0; color: var(--muted); }
+    .section-chat { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: .45rem .85rem; border: 1px solid #a8bddd; border-radius: 4px; background: var(--soft-blue); color: var(--blue); font-size: .78rem; font-weight: 800; text-decoration: none; white-space: nowrap; }
+    .section-chat:hover { border-color: var(--blue); background: #dce8fa; }
     .about-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: clamp(2rem, 7vw, 6rem); align-items: stretch; }
     .about-copy, .focus-panel { display: flex; flex-direction: column; }
     .about-copy { justify-content: space-between; }
@@ -146,6 +148,7 @@
       .nav-links a { font-size: .64rem; letter-spacing: .045em; }
       .section-head, .about-grid { grid-template-columns: 1fr; gap: 1rem; }
       .section-head { margin-bottom: 1.7rem; }
+      .section-chat { justify-self: start; }
       .project-grid { grid-template-columns: 1fr; }
       .project { min-height: auto; }
       .project-art-link, .project-visual { height: 150px; }
@@ -199,6 +202,7 @@
       <div class="wrap">
         <div class="section-head about-head">
           <div><p class="section-kicker">01 / About</p><h2 id="about-title">Engineering across disciplines and scales.</h2></div>
+          <a class="section-chat" href="#contact">Let’s Chat ↘</a>
         </div>
         <div class="about-grid">
           <div class="about-copy">
@@ -217,6 +221,7 @@
         <div class="section-head">
           <div><p class="section-kicker">02 / Experience</p><h2 id="experience-title">Research to deployment.</h2></div>
           <p class="section-intro">A path from award-winning chemistry and microbial research through university and applied materials development into energy products operating at scale.</p>
+          <a class="section-chat" href="#contact">Let’s Chat ↘</a>
         </div>
         <div class="timeline">
           <article class="timeline-item"><div><h3>Tesla</h3><p class="role">Senior Product Engineer · Megapack</p><p>Utility-scale battery energy storage, product engineering, and technical work supporting large battery deployments.</p></div><div class="timeline-side"><span class="timeline-date">Current</span><img class="timeline-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Tesla%2C_Inc._-_Logo_%28black_script_version%29.svg" alt="Tesla logo" width="160" height="16" loading="lazy" decoding="async"></div></article>
@@ -232,6 +237,7 @@
         <div class="section-head">
           <div><p class="section-kicker">03 / Selected work</p><h2 id="projects-title">Projects across scales.</h2></div>
           <p class="section-intro">A selection of research and engineering work, from early experiments in environmental biotechnology to in-orbit manufacturing and grid-scale batteries.</p>
+          <a class="section-chat" href="#contact">Let’s Chat ↘</a>
         </div>
         <div class="project-grid">
           <article class="project">
