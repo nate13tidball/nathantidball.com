@@ -35,10 +35,10 @@
     .skip:focus { top: 1rem; }
     .wrap { width: min(var(--max), calc(100% - 3rem)); margin-inline: auto; }
     .site-header { position: sticky; top: 0; z-index: 5; border-bottom: 1px solid rgba(214,223,234,.86); background: rgba(255,255,255,.94); backdrop-filter: blur(14px); }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    .nav-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .nav { display: flex; align-items: stretch; flex-direction: column; }
+    .nav-top { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .brand { color: var(--blue); text-decoration: none; font-size: 1.08rem; font-weight: 800; letter-spacing: -.035em; white-space: nowrap; }
-    .nav-links { display: flex; gap: clamp(.8rem, 2.4vw, 2rem); align-items: center; list-style: none; margin: 0; padding: 0; }
+    .nav-links { min-height: 46px; display: flex; gap: clamp(.8rem, 2.4vw, 2rem); align-items: center; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
     .nav-links a { text-decoration: none; color: var(--muted); font-size: .75rem; font-weight: 750; letter-spacing: .09em; }
     .nav-links a:hover { color: var(--blue); }
     .header-actions { display: flex; align-items: center; gap: .45rem; }
@@ -60,16 +60,16 @@
     .button.secondary:hover { background: var(--soft-blue); }
     main > section { padding: clamp(4.5rem, 9vw, 7rem) 0; border-bottom: 1px solid var(--line); }
     .section-head { display: grid; grid-template-columns: minmax(180px, .7fr) 2fr; gap: 2rem; align-items: start; margin-bottom: 2.5rem; }
+    .about-head { grid-template-columns: 1fr; }
     .section-head h2 { margin: 0; color: var(--blue-dark); font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.055em; line-height: 1.08; }
     .section-intro { max-width: 650px; margin: .25rem 0 0; color: var(--muted); }
-    .about-grid { display: grid; grid-template-columns: 1.4fr .8fr; gap: clamp(2rem, 7vw, 6rem); align-items: start; }
+    .about-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: clamp(2rem, 7vw, 6rem); align-items: start; }
     .about-copy p { max-width: 680px; margin: 0 0 1rem; color: var(--muted); }
     .about-copy strong { color: var(--ink); }
-    .focus-panel { padding: 1.6rem; background: var(--silver); border: 1px solid var(--line); border-radius: 6px; }
     .focus-panel h3 { margin: 0 0 .9rem; color: var(--blue-dark); font-size: .78rem; letter-spacing: .11em; text-transform: uppercase; }
-    .focus-panel ul { display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; }
-    .focus-panel li { color: #3f5068; font-size: .92rem; }
-    .focus-panel li::before { content: "—"; margin-right: .55rem; color: var(--blue); font-weight: 800; }
+    .focus-panel ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; margin: 0; padding: 0; list-style: none; }
+    .focus-panel li { display: flex; min-height: 94px; align-items: flex-end; padding: 1rem; border: 1px solid var(--line); border-radius: 8px; background: linear-gradient(145deg, #fff, #f5f8fc); color: #3f5068; font-size: .88rem; font-weight: 700; box-shadow: 0 4px 14px rgba(29,58,100,.04); }
+    .focus-panel li::before { content: ""; width: .45rem; height: .45rem; flex: 0 0 auto; margin: 0 .55rem .42rem 0; border-radius: 50%; background: #7f9bc5; box-shadow: 0 0 0 4px #eaf0fa; }
     .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
     .project { min-height: 230px; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: linear-gradient(145deg, #fff, #f8fafd); transition: border-color .18s, transform .18s, box-shadow .18s; }
     .project:hover { transform: translateY(-3px); border-color: #9bb3d8; box-shadow: 0 12px 28px rgba(29,58,100,.08); }
@@ -105,12 +105,11 @@
     .footer-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
     @media (max-width: 720px) {
       .wrap { width: min(var(--max), calc(100% - 2rem)); }
-      .nav { min-height: 68px; align-items: stretch; flex-direction: column; gap: .55rem; padding: .7rem 0; }
-      .nav-top { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+      .nav-top { min-height: 62px; gap: .5rem; }
       .brand { font-size: .96rem; }
       .header-actions { gap: .3rem; }
       .header-actions a { min-height: 34px; padding: .35rem .5rem; font-size: .65rem; }
-      .nav-links { width: 100%; justify-content: space-between; gap: .3rem; }
+      .nav-links { width: 100%; min-height: 42px; justify-content: space-between; gap: .3rem; }
       .nav-links a { font-size: .64rem; letter-spacing: .045em; }
       .section-head, .about-grid { grid-template-columns: 1fr; gap: 1rem; }
       .section-head { margin-bottom: 1.7rem; }
@@ -124,6 +123,8 @@
       .nav-top { align-items: flex-start; flex-direction: column; }
       .header-actions { width: 100%; }
       .header-actions a { flex: 1; }
+      .focus-panel ul { grid-template-columns: 1fr; }
+      .focus-panel li { min-height: 64px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
   </style>
@@ -163,14 +164,13 @@
     </section>
     <section id="about" aria-labelledby="about-title">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head about-head">
           <div><p class="section-kicker">01 / About</p><h2 id="about-title">A materials mindset, applied to real systems.</h2></div>
-          <p class="section-intro">My work has moved from science fair experiments to advanced manufacturing and large-scale energy storage. Across each step, I’ve been interested in how small changes in chemistry and design can create useful, measurable outcomes.</p>
         </div>
         <div class="about-grid">
           <div class="about-copy">
-            <p>I’m a <strong>University of Michigan chemical engineering</strong> graduate and an engineer at <strong>Tesla</strong>, where I work on Megapack energy storage. Earlier research took me through microbial fuel cells, redox flow batteries, microfluidics, polymer materials, and metal additive manufacturing.</p>
-            <p>Today I’m especially interested in dependable energy infrastructure, manufacturing methods that unlock new materials, and tools that make complex engineering work easier to operate.</p>
+            <p>I’m a <strong>University of Michigan chemical engineering</strong> graduate and a seasoned <strong>Senior Product Engineer at Tesla</strong>, focused on Megapack energy storage. I bring product engineering experience to battery systems built for dependable, large-scale energy storage.</p>
+            <p>Before Tesla, I worked across redox flow batteries, 3D-printed microfluidics, polymer materials, and metal additive manufacturing. I’m drawn to engineering that turns new materials and processes into useful products and infrastructure.</p>
           </div>
           <aside class="focus-panel" aria-label="Areas of focus">
             <h3>Areas of focus</h3>
@@ -200,23 +200,23 @@
           </article>
           <article class="project">
             <div class="project-visual" role="img" aria-label="Illustration of a redox flow battery with two electrolyte reservoirs"><svg viewBox="0 0 640 240" aria-hidden="true"><g fill="none" stroke="#173f8a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M160 58v74c0 18 12 30 30 30h32M480 58v74c0 18-12 30-30 30h-32M222 162h24M394 162h24M280 60v122h80V60M300 60V42h40v18"/><path d="M222 162v31h-40M418 162v31h40" stroke-opacity=".45"/></g><path d="M166 105h38v51h-38zM436 92h38v64h-38z" fill="#8faedc"/><path d="M166 105h38v51h-38z" fill="#8faedc"/><path d="M282 128h76" stroke="#9aaec9" stroke-width="3" stroke-dasharray="8 8"/><circle cx="320" cy="128" r="13" fill="#173f8a"/><path d="m312 128 6 6 12-14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="project-content"><div class="project-meta"><span>University of Michigan · 2019–2023</span><span>Electrochemistry</span></div><h3>Redox flow battery systems</h3><p>In David Kwabie’s lab, designed experimental setups and explored new electrolytes for redox flow batteries.</p></div>
+            <div class="project-content"><div class="project-meta"><span>University of Michigan · 2019–2021</span><span>Electrochemistry</span></div><h3>Redox flow battery systems</h3><p>In David Kwabie’s lab, designed experimental setups and explored new electrolytes for redox flow batteries.</p></div>
           </article>
           <article class="project">
-            <div class="project-visual" role="img" aria-label="Illustration of channels in a microfluidic device"><svg viewBox="0 0 640 240" aria-hidden="true"><rect x="124" y="34" width="392" height="172" rx="14" fill="#f8fbff" stroke="#173f8a" stroke-width="4"/><path d="M150 82h100c34 0 34 74 70 74h60c34 0 34-74 70-74h40M150 158h54c28 0 28-38 56-38h80c30 0 30 38 58 38h92" fill="none" stroke="#557fb9" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><circle cx="150" cy="82" r="10" fill="#173f8a"/><circle cx="490" cy="82" r="10" fill="#173f8a"/><circle cx="150" cy="158" r="10" fill="#95b0d5"/><circle cx="490" cy="158" r="10" fill="#95b0d5"/><path d="M178 82h44m58 76h26m80-76h30m30 76h44" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></div>
-            <div class="project-content"><div class="project-meta"><span>University of Michigan · 2019–2023</span><span>Microfluidics</span></div><h3>3D-printed microfluidic channels</h3><p>Worked in the Burns Lab on using 3D printing to create microfluidic channels and research devices.</p></div>
+            <div class="project-visual" role="img" aria-label="Illustration of additive manufacturing printing a microfluidic channel device"><svg viewBox="0 0 640 240" aria-hidden="true"><g fill="none" stroke="#173f8a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M170 34v32h300V34M205 34v26M435 34v26M320 66v42"/><path d="M292 102h56l-12 20h-32z" fill="#8faedc"/><path d="M185 145h270v52H185z" fill="#f8fbff" stroke-width="4"/><path d="M204 160h52c18 0 18 22 36 22h50c18 0 18-22 36-22h57" stroke="#557fb9" stroke-width="8"/><path d="M320 122v18M190 209h260" stroke-opacity=".45"/></g><path d="M286 127h68M294 135h52M302 143h36" stroke="#95b0d5" stroke-width="4" stroke-linecap="round"/><circle cx="320" cy="99" r="7" fill="#173f8a"/></svg></div>
+            <div class="project-content"><div class="project-meta"><span>University of Michigan · 2021–2023</span><span>Microfluidics</span></div><h3>3D-printed microfluidic channels</h3><p>Worked in the Burns Lab on additive manufacturing of microfluidic channels and research devices.</p></div>
           </article>
           <article class="project">
             <a class="project-art-link" href="https://abstracts.societyforscience.org/Home/FullAbstract?ProjectId=17829" target="_blank" rel="noopener noreferrer" aria-label="Open the 2019 antimicrobial copolymers ISEF abstract in a new tab"><img class="project-art" src="https://fairfolio.org/og/acrylate-polymerization-formation-of-uv-curable-antimicrobia-270eafa4.png" alt="Fairfolio preview for Nathan Tidball’s antimicrobial copolymer project" width="1200" height="630" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
-            <div class="project-content"><div class="project-meta"><span>2019</span><span>Polymer science</span></div><h3>Antimicrobial acrylate polymers</h3><p>Developed novel acrylate molecules and polymerized them into antimicrobial materials, earning second place in ISEF Materials Science.</p><a class="project-source" href="https://abstracts.societyforscience.org/Home/FullAbstract?ProjectId=17829" target="_blank" rel="noopener noreferrer">Read official 2019 ISEF abstract ↗</a><small class="project-credit">Thumbnail: Fairfolio · project record: Society for Science</small></div>
+            <div class="project-content"><div class="project-meta"><span>2019</span><span>Polymer science</span></div><h3>Antimicrobial acrylate polymers</h3><p>Developed novel acrylate molecules and polymerized them into antimicrobial materials, earning second place in ISEF Materials Science.</p><a class="project-source" href="https://abstracts.societyforscience.org/Home/FullAbstract?ProjectId=17829" target="_blank" rel="noopener noreferrer">Read official 2019 ISEF abstract ↗</a><small class="project-credit">Thumbnail: Fairfolio</small></div>
           </article>
           <article class="project">
             <a class="project-art-link" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=15579" target="_blank" rel="noopener noreferrer" aria-label="Open the 2018 heavy-metal precipitation ISEF abstract in a new tab"><img class="project-art" src="https://fairfolio.org/og/single-chamber-mfc-role-of-extracellular-phosphate-in-heavy-fe2a527b.png" alt="Fairfolio preview for Nathan Tidball’s heavy-metal precipitation microbial fuel cell project" width="1200" height="630" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
-            <div class="project-content"><div class="project-meta"><span>2018</span><span>Environmental engineering</span></div><h3>Microbial fuel cells for heavy-metal removal</h3><p>Engineered a microbial fuel cell around modified exoelectrogenic bacteria to precipitate heavy metals from water while producing electricity.</p><a class="project-source" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=15579" target="_blank" rel="noopener noreferrer">Read official 2018 ISEF abstract ↗</a><small class="project-credit">Thumbnail: Fairfolio · project record: Society for Science</small></div>
+            <div class="project-content"><div class="project-meta"><span>2018</span><span>Environmental engineering</span></div><h3>Microbial fuel cells for heavy-metal removal</h3><p>Engineered a microbial fuel cell around modified exoelectrogenic bacteria to precipitate heavy metals from water while producing electricity.</p><a class="project-source" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=15579" target="_blank" rel="noopener noreferrer">Read official 2018 ISEF abstract ↗</a><small class="project-credit">Thumbnail: Fairfolio</small></div>
           </article>
           <article class="project">
             <a class="project-art-link" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=9342" target="_blank" rel="noopener noreferrer" aria-label="Open the 2017 arsenic filtration ISEF abstract in a new tab"><img class="project-art" src="https://fairfolio.org/og/single-chamber-mfc-filtration-of-arsenic-with-an-exoelectrog-79d6f4b4.png" alt="Fairfolio preview for Nathan Tidball’s arsenic filtration microbial fuel cell project" width="1200" height="630" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
-            <div class="project-content"><div class="project-meta"><span>2017</span><span>Bioelectrochemistry</span></div><h3>Arsenic filtration microbial fuel cell</h3><p>Studied an exoelectrogenic biofilm in a microbial fuel cell as a way to filter arsenic-contaminated water while generating electricity.</p><a class="project-source" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=9342" target="_blank" rel="noopener noreferrer">Read official 2017 ISEF abstract ↗</a><small class="project-credit">Thumbnail: Fairfolio · project record: Society for Science</small></div>
+            <div class="project-content"><div class="project-meta"><span>2017</span><span>Bioelectrochemistry</span></div><h3>Arsenic filtration microbial fuel cell</h3><p>Studied an exoelectrogenic biofilm in a microbial fuel cell as a way to filter arsenic-contaminated water while generating electricity.</p><a class="project-source" href="https://abstracts.societyforscience.org/Home/PrintPdf?projectId=9342" target="_blank" rel="noopener noreferrer">Read official 2017 ISEF abstract ↗</a><small class="project-credit">Thumbnail: Fairfolio</small></div>
           </article>
         </div>
       </div>
@@ -228,7 +228,7 @@
           <p class="section-intro">A path through university research and applied materials development into energy products operating at scale.</p>
         </div>
         <div class="timeline">
-          <article class="timeline-item"><div><h3>Tesla</h3><p class="role">Engineer · Megapack</p><p>Working on utility-scale battery energy storage. My background spans product engineering and technical work supporting large battery deployments.</p></div><span class="timeline-date">Current</span></article>
+          <article class="timeline-item"><div><h3>Tesla</h3><p class="role">Senior Product Engineer · Megapack</p><p>Working on utility-scale battery energy storage. My background spans product engineering and technical work supporting large battery deployments.</p></div><span class="timeline-date">Current</span></article>
           <article class="timeline-item"><div><h3>HRL Laboratories</h3><p class="role">Materials &amp; manufacturing research</p><p>Contributed to the DARPA NOMAD space manufacturing effort, multi-metal powder bed fusion, and high-entropy alloy development.</p></div><span class="timeline-date">Earlier</span></article>
           <article class="timeline-item"><div><h3>University of Michigan</h3><p class="role">B.S. Chemical Engineering · Research</p><p>Conducted research in redox flow batteries with David Kwabie and 3D-printed microfluidics in the Burns Lab.</p></div><span class="timeline-date">2019–2023</span></article>
         </div>
