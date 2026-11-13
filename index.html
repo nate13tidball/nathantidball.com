@@ -80,9 +80,10 @@
     .about-copy p { max-width: 680px; margin: 0 0 1rem; color: var(--muted); }
     .about-copy strong { color: var(--ink); }
     .focus-panel h3 { margin: 0 0 .9rem; color: var(--blue-dark); font-size: .78rem; letter-spacing: .11em; text-transform: uppercase; }
-    .focus-panel ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; margin: 0; padding: 0; list-style: none; }
-    .focus-panel li { display: flex; min-height: 94px; align-items: flex-end; padding: 1rem; border: 1px solid var(--line); border-radius: 8px; background: linear-gradient(145deg, #fff, #f5f8fc); color: #3f5068; font-size: .88rem; font-weight: 700; box-shadow: 0 4px 14px rgba(29,58,100,.04); }
-    .focus-panel li::before { content: ""; width: .45rem; height: .45rem; flex: 0 0 auto; margin: 0 .55rem .42rem 0; border-radius: 50%; background: #7f9bc5; box-shadow: 0 0 0 4px #eaf0fa; }
+    .focus-panel ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; margin: 0; padding: 0; list-style: none; }
+    .focus-panel li { display: flex; min-height: 112px; align-items: center; justify-content: center; padding: 1rem; border: 1px solid #c5d2e3; border-radius: 9px; background: linear-gradient(145deg, #fff, #f4f7fb); color: #263d62; font-size: 1rem; font-weight: 800; line-height: 1.35; text-align: center; box-shadow: 0 5px 15px rgba(29,58,100,.08), inset 0 1px #fff; }
+    .focus-panel li::before { content: none; }
+    .focus-panel li:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - .35rem); }
     .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
     .project { min-height: 230px; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: linear-gradient(145deg, #fff, #f8fafd); transition: border-color .18s, transform .18s, box-shadow .18s; }
     .project:hover { transform: translateY(-3px); border-color: #9bb3d8; box-shadow: 0 12px 28px rgba(29,58,100,.08); }
@@ -137,7 +138,8 @@
       .header-actions { width: 100%; }
       .header-actions a { flex: 1; }
       .focus-panel ul { grid-template-columns: 1fr; }
-      .focus-panel li { min-height: 64px; }
+      .focus-panel li { min-height: 68px; }
+      .focus-panel li:last-child:nth-child(odd) { width: 100%; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
   </style>
@@ -187,7 +189,7 @@
           </div>
           <aside class="focus-panel" aria-label="Areas of focus">
             <h3>Areas of focus</h3>
-            <ul><li>Energy storage &amp; electrochemistry</li><li>Advanced manufacturing</li><li>Materials development</li><li>Microfluidics &amp; lab prototyping</li></ul>
+            <ul><li>Energy storage</li><li>Systems engineering</li><li>Advanced manufacturing</li><li>Materials development</li><li>Microfluidics &amp; lab prototyping</li></ul>
           </aside>
         </div>
       </div>
@@ -205,7 +207,7 @@
           </article>
           <article class="project">
             <a class="project-art-link" href="https://www.hrl.com/laboratories/mml" target="_blank" rel="noopener noreferrer" aria-label="Open HRL's Materials and Microsystems overview in a new tab"><img class="project-art" src="https://www.hrl.com/laboratories/mml/_images/_banner/main.jpg" alt="HRL Materials and Microsystems laboratory banner" width="1200" height="420" loading="lazy" decoding="async" referrerpolicy="no-referrer"></a>
-            <div class="project-content"><div class="project-meta"><span>HRL Laboratories</span><span>Powder bed fusion</span></div><h3>Multi-metal additive manufacturing</h3><p>Worked on powder bed fusion printing across multiple metals, including novel alloy systems and work associated with a Boeing patent.</p><a class="project-source" href="https://www.hrl.com/laboratories/mml" target="_blank" rel="noopener noreferrer">Explore HRL materials research ↗</a></div>
+            <div class="project-content"><div class="project-meta"><span>2023 · HRL Laboratories</span><span>Powder bed fusion</span></div><h3>Multi-metal additive manufacturing</h3><p>Worked on powder bed fusion printing across multiple metals, including novel alloy systems and work associated with a Boeing patent.</p><a class="project-source" href="https://www.hrl.com/laboratories/mml" target="_blank" rel="noopener noreferrer">Explore HRL materials research ↗</a></div>
           </article>
           <article class="project">
             <div class="project-visual" role="img" aria-label="Illustration of an alloy crystal lattice"><svg viewBox="0 0 640 240" aria-hidden="true"><g fill="none" stroke="#173f8a" stroke-opacity=".45" stroke-width="3"><path d="M150 66 254 34l108 42 118-24M150 66l-8 100 112 42 108-48 118 34M254 34l0 88 108 38 0-86M142 166l112-44 108 48 126-34M362 76l110 100"/><path d="m254 122 118-46 100 110" stroke-opacity=".25"/></g><g fill="#173f8a"><circle cx="150" cy="66" r="12"/><circle cx="254" cy="34" r="12"/><circle cx="362" cy="76" r="12"/><circle cx="480" cy="52" r="12"/><circle cx="142" cy="166" r="12"/><circle cx="254" cy="122" r="12"/><circle cx="362" cy="160" r="12"/><circle cx="488" cy="132" r="12"/><circle cx="254" cy="208" r="12"/></g><g fill="#fff" opacity=".9"><circle cx="146" cy="62" r="3"/><circle cx="250" cy="30" r="3"/><circle cx="358" cy="72" r="3"/><circle cx="476" cy="48" r="3"/><circle cx="138" cy="162" r="3"/><circle cx="250" cy="118" r="3"/><circle cx="358" cy="156" r="3"/><circle cx="484" cy="128" r="3"/></g></svg></div>
