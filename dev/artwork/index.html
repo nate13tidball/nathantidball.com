@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://openseadragon.github.io; connect-src 'self' https://openseadragon.github.io; base-uri 'none'; form-action 'none'">
+  <title>Artwork deep zoom | Nathan Tidball</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/dev/styles.css">
+  <script defer src="/assets/vendor/openseadragon/6.1.1/openseadragon.min.js"></script>
+  <script defer src="/dev/artwork/viewer.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap topbar"><a class="brand" href="/">NATHAN TIDBALL</a><a class="back" href="/dev/">← All experiments</a></header>
+  <main id="main" class="wrap">
+    <div class="intro artwork-intro"><p class="eyebrow">Artwork / Deep-zoom study</p><h1>There’s more up close.</h1><p class="lede">A 142-megapixel view of the Duomo in Florence. Zoom into the stonework; the detail loads as you explore.</p></div>
+    <section aria-label="Interactive artwork demo">
+      <div class="viewer-stage" id="viewer-stage">
+        <div class="toolbar" role="group" aria-label="Image controls">
+          <button id="zoom-in" disabled aria-label="Zoom in">＋ Zoom in</button>
+          <button id="zoom-out" disabled aria-label="Zoom out">− Zoom out</button>
+          <button id="fit" disabled>Fit image</button>
+          <button id="actual-size" disabled>1:1 detail</button>
+          <button id="fullscreen" disabled>Fullscreen</button>
+          <output id="zoom-readout" aria-label="Zoom relative to fitted image">—</output>
+        </div>
+        <div id="viewer" tabindex="0" role="region" aria-label="Zoomable photograph of Florence Cathedral" aria-describedby="viewer-help"></div>
+        <div class="viewer-status"><p id="viewer-status" role="status">Loading the image…</p><button id="retry" hidden>Retry image</button></div>
+      </div>
+      <noscript><p>This interactive viewer needs JavaScript. <a href="https://openseadragon.github.io/">See the source image and viewer project.</a></p></noscript>
+      <p class="help" id="viewer-help">Scroll or pinch to zoom. Drag to pan. With the image focused, use arrow keys to pan, + / − to zoom, and Home to fit. “1:1 detail” shows one image pixel per CSS pixel.</p>
+      <dl class="stats">
+        <div><dt>Source resolution</dt><dd id="resolution">13,920 × 10,200 px</dd></div>
+        <div><dt>Tiles loaded this session</dt><dd id="tile-count">0</dd></div>
+        <div><dt>First tile drawn</dt><dd id="first-draw">—</dd></div>
+      </dl>
+      <p class="footnote">Duomo photograph © 2012 <a href="https://www.flickr.com/photos/projectese/">Dario Morelli</a>, streamed from <a href="https://openseadragon.github.io/">OpenSeadragon’s public demo</a>. This is a viewing reference, not Nathan’s artwork. Sample availability depends on that external host.</p>
+    </section>
+    <section class="notes" aria-labelledby="how-heading">
+      <p class="eyebrow">Small pieces. Big picture.</p><h2 id="how-heading">Made for exploring large artwork.</h2>
+      <p>The viewer starts with small tiles and requests more detail only where you look. Your browser never needs to download or decode the entire original just to open the image.</p>
+      <p>This sample has 142 million pixels; it is not a gigabyte-file benchmark. The same tile-based approach is intended for the much larger artwork to come. Smoothness still depends on the tile host, connection, and device.</p>
+      <details><summary>Try it out</summary><ol><li>Let the overview appear, then choose <strong>1:1 detail</strong> to inspect the masonry.</li><li>Drag to a different area. Watch the loaded tile count increase as detail arrives.</li><li>Choose <strong>Fit image</strong>, then try fullscreen and keyboard navigation.</li><li>Try it on your phone. Pinch inside the image; scroll the page outside it.</li></ol><p>The first-tile timer measures one drawn tile, not a fully sharp viewport. The counter records tile-load events, not network bytes or total memory.</p></details>
+      <p class="footnote">Implementation and future artwork workflow: <a href="/docs/artwork-viewing.md">artwork viewing guide</a>.</p>
+    </section>
+  </main>
+  <footer class="wrap">Nathan Tidball / Development / Artwork</footer>
+</body>
+</html>
