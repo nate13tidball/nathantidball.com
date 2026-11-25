@@ -10,7 +10,8 @@ request; the existing README establishes the static personal-site scope.
 
 ## Scope
 
-- Keep the main site static and lightweight, with no build step or analytics.
+- Keep the main site static and lightweight, with no build step. Offer optional,
+  anonymous visit analytics with a clear visitor choice.
 - Use established open-source tools for tiled image viewing and preparation.
 - Keep public-facing content distinct from development experiments. Development
   URLs are public, even when unlisted or marked noindex.

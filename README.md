@@ -1,6 +1,7 @@
 # NathanTidball.com
 
-Static personal website. No build step, database, cookies, or analytics.
+Static personal website. No build step or database. Optional Vercel Web Analytics
+loads only after a visitor allows it; the choice is stored in this browser.
 The artwork development demo uses a locally vendored OpenSeadragon viewer.
 Vercel deploys `main` to `https://www.nathantidball.com`. GitHub Pages also
 publishes `main` from the repository root as a secondary preview. Only public website
@@ -75,6 +76,18 @@ TXT verification record, then submit `https://nathantidball.com/sitemap.xml`
 and inspect/request indexing for the homepage after the domain is live.
 Indexing and rankings are not guaranteed. Review existing biography/employment
 claims for accuracy before promoting the site.
+
+## Visitor analytics
+
+The homepage, blog, and `/privacy/` use the same `assets/analytics/choice.js` and
+`choice.css` module as the company website. Production hostnames are configured
+on each script tag. The module loads Vercel Web Analytics only after permission,
+stores the choice for 180 days, and provides a settings button to change it.
+The development and meeting redirect pages are excluded. GitHub Pages and local
+previews do not send analytics. Enable Web Analytics in this site's Vercel project
+to start collecting permitted visits; the company project does not cover it.
+Reports show aggregate pages, referrers, countries, and devices, not identities.
+Keep the two module copies identical when changing them.
 
 ## Security and maintenance
 

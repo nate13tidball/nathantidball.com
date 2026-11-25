@@ -7,7 +7,9 @@
   <meta name="description" content="Nathan Tidball is a Senior Product Engineer at Tesla focused on Megapack energy storage. Previously, he developed in-orbit construction methods for DARPA NOM4D at HRL Laboratories.">
   <link rel="canonical" href="https://nathantidball.com/">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data: https://www.hrl.com https://www.darpa.mil https://pbs.twimg.com https://fairfolio.org https://wilsonvillespokesman.com https://upload.wikimedia.org https://media.springernature.com https://copper3dp.com; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.hrl.com https://www.darpa.mil https://pbs.twimg.com https://fairfolio.org https://wilsonvillespokesman.com https://upload.wikimedia.org https://media.springernature.com https://copper3dp.com; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <link rel="stylesheet" href="/assets/analytics/choice.css">
+  <script defer src="/assets/analytics/choice.js" data-analytics-hosts="nathantidball.com,www.nathantidball.com"></script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Nathan Tidball — Senior Product Engineer | Tesla Megapack">
   <meta property="og:description" content="Megapack energy storage engineering at Tesla and earlier DARPA NOM4D space manufacturing research at HRL Laboratories.">
@@ -44,6 +46,7 @@
   <style>
     :root {
       color-scheme: light;
+      --analytics-accent: #173f8a;
       --blue: #173f8a;
       --blue-dark: #102e68;
       --ink: #17243a;
@@ -136,9 +139,10 @@
     .contact p { max-width: 620px; margin: .8rem 0 0; color: var(--muted); }
     footer { padding: 1.6rem 0; color: #718099; font-size: .78rem; }
     .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
-    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1.25rem; }
     .footer-links a { color: var(--blue); text-decoration: none; font-weight: 700; }
     .footer-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-links button { min-height: 44px; padding: 0; border: 0; background: none; color: var(--blue); font: inherit; font-weight: 700; cursor: pointer; }
     @media (max-width: 720px) {
       .wrap { width: min(var(--max), calc(100% - 2rem)); }
       .nav-top { min-height: 62px; gap: .5rem; }
@@ -289,6 +293,6 @@
       </div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><span>© 2026 Nathan Tidball</span><div class="footer-links"><a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a><a href="/meet" target="_blank" rel="noopener noreferrer">Schedule ↗</a><a href="https://x.com/NTidball73232" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://github.com/nate13tidball" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>
+  <footer><div class="wrap footer-inner"><span>© 2026 Nathan Tidball</span><div class="footer-links"><a href="https://www.linkedin.com/in/nathantidball/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:nate.tidball@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a><a href="/meet" target="_blank" rel="noopener noreferrer">Schedule ↗</a><a href="https://x.com/NTidball73232" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a href="https://github.com/nate13tidball" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="/privacy/">Privacy</a><button type="button" data-analytics-settings>Analytics: Choose</button></div></div></footer>
 </body>
 </html>
